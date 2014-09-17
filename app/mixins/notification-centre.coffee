@@ -5,10 +5,12 @@ NotificationCentreMixin = Ember.Mixin.create
   notificationCentreMessageDuration: 1000
   notificationCentreMessage: ''
   isNotificationCentreVisible: (()->
-    Ember.run.later(()=>
-      @set('notificationCentreMessage', '')
-    , @get('notificationCentreMessageDuration'))
-    !Ember.isEmpty(@get('notificationCentreMessage'))
+    visible = !Ember.isEmpty(@get('notificationCentreMessage'))
+    if visible
+      Ember.run.later(()=>
+        @set('notificationCentreMessage', '')
+      , @get('notificationCentreMessageDuration'))
+    visible
   ).property('notificationCentreMessage')
   badgeCount: {}
   actions:
