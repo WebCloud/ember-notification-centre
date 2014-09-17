@@ -1,5 +1,7 @@
-This is slots, you currently have {{badges}} badges notified
+This is slots, you currently have <span class="badge">{{badges}}</span> badges notified
 
-<button {{action 'doSomething'}}>send message to notification centre</button>
+<button class="btn btn-success" {{action 'doSomething' 'success'}}>send a success message to notification centre</button>
+<button class="btn btn-danger" {{action 'doSomething' 'danger'}}>send a error message to notification centre</button>
+<button class="btn btn-warning" {{action 'doSomething' 'warning'}}>send a warning message to notification centre</button>
 <button {{action 'increaseBadge'}}>increase the badge count for this area</button>
-<button {{action 'emptyBadges'}}>increase the badge count for this area</button>
+<button {{action 'emptyBadges'}}>empty the badge count for this area</button>

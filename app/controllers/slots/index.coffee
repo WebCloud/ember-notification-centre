@@ -10,8 +10,8 @@ SlotsIndexController = Ember.Controller.extend
     if Ember.isEmpty(badges) then 0 else badges
   ).property('controllers.application.badgeCount.slots')
   actions:
-    doSomething:()->
-      @get('controllers.application').send('notify', {type: 'message', message: 'Yay, I am notifying'})
+    doSomething:(type)->
+      @get('controllers.application').send('notify', {type: 'message', message: {content: 'Yay, I am notifying', type: type}})
     increaseBadge:()->
       @get('controllers.application').send('notify', {type: 'badge', target: 'slots'})
     emptyBadges:()->
