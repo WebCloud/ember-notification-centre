@@ -1,9 +1,6 @@
 `import Ember from 'ember'`
 
 SlotsIndexController = Ember.Controller.extend
-  init: ()->
-    @_super()
-    console.debug "akdjajsd alsjhdakjhsd alsnjahsdasd ljnajlshda "
   needs: ['application']
   badges: (()->
     badges = @get('controllers.application.badgeCount.slots')
